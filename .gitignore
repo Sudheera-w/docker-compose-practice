@@ -1,0 +1,13 @@
+target/
+*.log
+
+node_modules/
+build/
+
+.idea/
+*.iml
+
+.DS_Store
+Thumbs.db
+
+mysql-data/
