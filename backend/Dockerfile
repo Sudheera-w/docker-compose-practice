@@ -1,7 +1,8 @@
 FROM eclipse-temurin:17-jdk AS build
 WORKDIR /app
+RUN apt-get update && apt-get install -y maven && rm -rf /var/lib/apt/lists/*
 COPY . .
-RUN ./mvnw -q -DskipTests package || mvn -q -DskipTests package
+RUN mvn -q -DskipTests package
 
 FROM eclipse-temurin:17-jre
 WORKDIR /app
